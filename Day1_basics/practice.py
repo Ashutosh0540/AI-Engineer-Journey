@@ -93,3 +93,7 @@ oddn(n)
 evenn(n)
 print("Sum:", sumofnum(n))
 print("Factorial:", factorial(n))
+
+#append = add as one | extend = break and add
+arr.append([4,5])   #→ [1,2,3,[4,5]]
+arr.extend([4,5])   #→ [1,2,3,4,5]

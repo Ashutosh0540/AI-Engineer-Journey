@@ -37,3 +37,26 @@ for i in range(1, n + 1):
 print("Even numbers:", even_numbers)
 print("Sum:", total_sum)
 print("Squares:", squares)
+
+
+## 🧠 Dictionaries in Python
+
+- A dictionary stores data in key-value pairs
+- Values can be any data type (list, string, number, etc.)
+
+### Example:
+student = {
+    "name": "Ashutosh",
+    "marks": [90, 85]
+}
+
+### Updating nested data:
+student["marks"].append(95)
+
+### Output:
+{'name': 'Ashutosh', 'marks': [90, 85, 95]}
+
+### Key Learning:
+- Lists are mutable
+- Dictionary stores reference to list
+- So modifying the list updates the dictionary automatically
