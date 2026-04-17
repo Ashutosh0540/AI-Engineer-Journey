@@ -1,0 +1,7 @@
+team1,team2,venue,team1_win
+MI,CSK,1,1
+RCB,CSK,0,0
+MI,RCB,1,1
+CSK,MI,0,0
+RCB,MI,1,0
+CSK,RCB,1,1
