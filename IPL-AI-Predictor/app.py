@@ -17,12 +17,16 @@ if st.button("Predict"):
         try:
             with st.spinner("Predicting..."):
                 res = requests.get(
-                    f"http://127.0.0.1:8000/predict?team1={team1}&team2={team2}&venue={venue_val}"
+                    f"http://api:8000/predict?team1={team1}&team2={team2}&venue={venue_val}"
                 )
+                
+                # 🔥 IMPORTANT: check if request worked
+                res.raise_for_status()
                 data = res.json()
 
-            st.success(f"🏆 Winner: {data['winner']}")
-            st.info(f"📊 Win Probability: {data['win_probability']}%")
+            st.success(f"🏆 Predicted Winner: {data['predicted_winner']}")
+            st.metric("Win Probability", f"{data['win_probability']}%")
 
-        except:
-            st.error("⚠️ API not running. Start FastAPI server.")
+        except requests.exceptions.RequestException as e:
+            st.error("⚠️ API not reachable")
+            st.text(str(e))
